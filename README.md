@@ -5,17 +5,24 @@ This repo has python code to demonstrate the use of Azure Cognitive Search with 
 
 ## Infrastructure Setup
 
+Clone the repo and create a virtual environment for the python scripts.
+
+```ps
+git clone https://github.com/fsaleemm/acs-vector-semantic.git
+cd acs-vector-semantic
+```
+
 Deploy the following Cognitive Services:
 
 1. Azure Open AI
-2. Cognitive Search Service
+1. Cognitive Search Service
 
 ```ps
 $LOCATION="eastus"
 az deployment sub create -n "acs-semantic-vector" -l $LOCATION -f infra/main.bicep -p infra/main.parameters.jsonc -p environmentName="semanticvectorsrc"
 ```
 
-## Index Setup
+## Environment Setup
 
 1. Rename .env-sample to .env and fill in the information from the deployed resources
 
@@ -29,17 +36,38 @@ az deployment sub create -n "acs-semantic-vector" -l $LOCATION -f infra/main.bic
     OPENAI_EMBEDDING_DEPLOYED_MODEL=acs-emb-ada-002
    ```
 
+1. Install the required packages
+
+    ```ps
+    pip install -r requirements.txt
+    ```
+
+1. Create a virtual environment for the python scripts
+
+    ```ps
+    python -m venv acs-env --system-site-packages
+    ```
+
+1. Create pip.ini file in the virtual environment folder and add the following content
+
+    ```code
+    [global]
+    index-url=https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-python/pypi/simple/
+    ```
+
 1. Activate the virtual environment (Assuming you are running in PowerShell)
 
     ```ps
     .\acs-env\Scripts\Activate.ps1
     ```
 
-1. Install the required packages
+1. Install the azure vector search package in preview
 
     ```ps
-    pip install -r requirements.txt.
+    pip install azure-search-documents==11.4.0a20230509004
     ```
+
+## Search Setup & Vector Data Indexing
 
 1. Run the index creation script
 
