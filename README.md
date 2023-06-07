@@ -74,7 +74,8 @@ You can run the scripts to see the results of the vector, hybrid, and semantic s
     ```code
     Score: 0.8404397
     Title: Azure Service Bus
-    Content: Azure Service Bus is a fully managed, enterprise-grade messaging service that enables you to build reliable and scalable applications. It provides features like message queuing, publish-subscribe, and dead-lettering. Service Bus supports various messaging patterns, including point-to-point, broadcast, and request-reply. You can use Service Bus to integrate your applications and serv
+    Content: Azure Service Bus is a fully managed, enterprise-grade messaging service that enables you to build reliable and scalable applications. It provides features like message queuing, publish-subscribe, and dead-lettering. Service Bus supports various messaging patterns, including point-to-point, broadcast, and request-reply. You can use Service Bus to integrate your applications and services, decouple your system components, and handle asynchronous communication. It also integrates with other Azure services, such as Azure Functions and Azure Logic Apps.
+    Category: Integration
 
     Score: 0.8315571
     Title: Azure SignalR Service
