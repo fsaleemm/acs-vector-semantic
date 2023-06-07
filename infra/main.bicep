@@ -65,7 +65,6 @@ module openAi 'core/ai/cognitiveservices.bicep' = {
         }
         scaleSettings: {
           scaleType: 'Standard'
-          capacity: 1
         }
       }
     ]

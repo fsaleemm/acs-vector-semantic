@@ -22,15 +22,22 @@ $LOCATION="eastus"
 az deployment sub create -n "acs-semantic-vector" -l $LOCATION -f infra/main.bicep -p infra/main.parameters.jsonc -p environmentName="semanticvectorsrc"
 ```
 
+This will run for several minutes. Once the deployment is complete, you can get the values for the following resources from the Azure Portal:
+
+1. Azure Search Service Endpoint
+1. Azure Search Service Admin Key
+1. Open AI Service Endpoint
+1. Open AI Service Key
+
 ## Environment Setup
 
-1. Rename .env-sample to .env and fill in the information from the deployed resources
+1. Rename .env-sample to .env and fill in the information from the deployed resources.
 
    ```code
-    AZURE_SEARCH_SERVICE_ENDPOINT=https://<Your-Search-Service>.search.windows.net
+    AZURE_SEARCH_SERVICE_ENDPOINT=<Your-Search-Service-Endpoint>
     AZURE_SEARCH_INDEX_NAME=semantic-vector
     AZURE_SEARCH_ADMIN_KEY=<Your-Search-Service-Admin-Key>
-    OPENAI_ENDPOINT=https://<Your-Open-AI-Service>.openai.azure.com/
+    OPENAI_ENDPOINT=<Your-Open-AI-Service-Endpoint>
     OPENAI_API_KEY=<Your-Open-AI-Service-Key>
     OPENAI_API_VERSION=2023-05-15
     OPENAI_EMBEDDING_DEPLOYED_MODEL=acs-emb-ada-002
