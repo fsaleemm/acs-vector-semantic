@@ -115,15 +115,9 @@ You can run the scripts to see the results of the vector, hybrid, and semantic s
 1. If you run into issues with Open AI dependencies issue MissingDependencyError, try the following after deactivating the virtual environment:
 
     ```ps
-    #Deactivate the virtual environment
-    deactivate
-
     #Install the missing dependencies
-    pip install openai [datalib]
+    pip install openai[datalib]
     
-    #Activate the virtual environment
-    .\acs-env\Scripts\Activate.ps1
-
     #Install the required packages
     pip install -r requirements.txt.
     ```
