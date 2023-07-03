@@ -49,31 +49,6 @@ This will run for several minutes. Once the deployment is complete, you can get 
     pip install -r requirements.txt
     ```
 
-1. Create a virtual environment for the python scripts
-
-    ```ps
-    python -m venv env --system-site-packages
-    ```
-
-1. Create "pip.ini" file in the virtual environment folder and add the following content
-
-    ```code
-    [global]
-    index-url=https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-for-python/pypi/simple/
-    ```
-
-1. Activate the virtual environment (Assuming you are running in PowerShell)
-
-    ```ps
-    .\env\Scripts\Activate.ps1
-    ```
-
-1. Install the azure vector search package in preview
-
-    ```ps
-    pip install azure-search-documents==11.4.0a20230509004
-    ```
-
 ## Search Setup & Vector Data Indexing
 
 1. Run the index creation script
